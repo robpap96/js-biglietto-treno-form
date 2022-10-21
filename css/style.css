@@ -1,0 +1,26 @@
+body {
+    background-color: #b91450;
+}
+.section-title h1 {
+    color: white;
+    text-align: center;
+}
+.ticket-generator {
+    background-color: white;
+    border-radius: 20px;
+}
+.ticket-generator label {
+    color: #b91450;
+}
+.ticket-generator .customer-name {
+    text-align: center;
+}
+
+.ticket-generator button {
+    color: #b91450;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #cccccc;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
