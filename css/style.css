@@ -8,10 +8,13 @@ body {
 .ticket-generator {
     background-color: white;
     border-radius: 20px;
+    -webkit-box-shadow: 5px 5px 40px 3px #000000;
+    -moz-box-shadow: 5px 5px 40px 3px #000000;
+    -o-box-shadow: 5px 5px 40px 3px #000000;
+    box-shadow: 5px 5px 40px 3px #000000;
 }
 .ticket-generator .form-label {
     color: #b91450;
-    margin: auto;
 }
 .ticket-generator .customer-name {
     text-align: center;
@@ -27,6 +30,10 @@ body {
 }
 .final-ticket .container-fluid{
     background-color: white;
+    -webkit-box-shadow: 5px 5px 40px 3px #000000;
+-moz-box-shadow: 5px 5px 40px 3px #000000;
+-o-box-shadow: 5px 5px 40px 3px #000000;
+box-shadow: 5px 5px 40px 3px #000000;
 }
 .final-ticket .col-4{
     background-color: grey;
@@ -34,4 +41,13 @@ body {
 .final-ticket .container-fluid .row {
     border-top: 1px solid grey;
     border-bottom: 1px solid grey;
+}
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: center;
+}
+.final-ticket h3 {
+    font-weight: 900;
 }

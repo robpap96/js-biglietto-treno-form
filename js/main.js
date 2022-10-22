@@ -1,10 +1,16 @@
 "use strict";
 
+//aggiungo il listener al click di "annulla"
+const resetButton = document.getElementById("reset-btn");
+resetButton.addEventListener('click', function ResetValue() {
+
+    window.location.reload();
+});
 
 
 //aggiungo il listener al click di "genera"
 const generatorButton = document.getElementById("genera-btn");
-generatorButton.addEventListener('click', function myFunction(){
+generatorButton.addEventListener('click', function TicketGenerator(){
     
     // prendo il nome dall'input text
     let customerName = document.getElementById("validationDefault01").value;
@@ -14,15 +20,15 @@ generatorButton.addEventListener('click', function myFunction(){
 
     // prendo l'età dall'input text
     let customerAge = document.getElementById("age").value;
-
-    // if( !isNaN(km) || km <= 0 || km > 3000) {
-    //     alert("Il valore deve essere numerico, e comrpeso tra 1 e 3000!");
-    //     window.location.reload();
-    // }
-    // if( isNaN(customerName) ) {
-    //     alert("Il valore deve essere numerico, e comrpeso tra 1 e 3000!");
-    //     window.location.reload();
-    // }
+    
+    if( !isNaN(customerName) ) {
+        alert("Il nome non può contenere numeri!");
+        window.location.reload();
+    }
+    if( isNaN(km) || km <= 0 || km > 3000) {
+        alert("Il valore deve essere numerico, e comrpeso tra 1 e 3000!");
+        window.location.reload();
+    }
 
     //aggiungo il nome del passeggero
     document.getElementById("ticket-name").innerHTML = customerName;
@@ -50,7 +56,13 @@ generatorButton.addEventListener('click', function myFunction(){
         document.getElementById("prezzo-biglietto").innerHTML = costoBiglietto;    
     }   
 
-    //genero casualmente "codice cp" e "carrozza"
+    //genero casualmente "carrozza"
+    const vagonNum = Math.round(Math.random() * 9 + 1);
+    document.getElementById("numero-carrozza").innerHTML = vagonNum;
 
+
+    //genero casualmente "codice cp"
+     const cpCode = Math.round(Math.random() * 99999 + 10000);
+    document.getElementById("codice-cp").innerHTML = cpCode;
 });    
-//aggiungo il listener al click di "genera"
+

@@ -22,18 +22,18 @@
                 <div class="ticket-generator py-3">
                     <div class="container-fluid flex-wrap">
                         <div class="row justify-content-center">
-                            <form class="row g-3">
-                                <div class="col-md-4">
-                                  <label for="validationDefault01" class="form-label">Nome e Cognome</label>
+                            <form class="row g-3 justify-content-evenly">
+                                <div class="col-md-3 row">
+                                  <label for="validationDefault01" class="form-label text-center">Nome e Cognome</label>
                                   <input type="text" class="form-control" id="validationDefault01">
                                 </div>
-                                <div class="col-md-4">
-                                  <label for="validationDefault02" class="form-label">Km da percorrere</label>
+                                <div class="col-md-3 row">
+                                  <label for="validationDefault02" class="form-label text-center">Km da percorrere</label>
                                   <input type="text" class="form-control" id="validationDefault02" >
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3 row">
                                     <!-- da controllare -->
-                                    <label for="validationDefault02" class="form-label">Età</label>
+                                    <label for="validationDefault02" class="form-label text-center">Età</label>
                                     <!-- da controllare -->
                                     <select id="age" class="form-select" aria-label="Default select example">
                                         <option selected>Seleziona Fascia d'età</option>
@@ -42,8 +42,13 @@
                                         <option value="Anziano">Anziano</option>
                                       </select>
                                 </div>
-                                <div class="col-12">
-                                  <button id="genera-btn" class="btn btn-primary" type="button" >Genera</button>
+                                <div class="col-4 ">
+                                    <div class="text-right d-flex justify-content-end">
+                                        <button id="genera-btn" class="btn btn-primary" type="button" >Genera</button>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <button id="reset-btn" class="btn btn-primary" type="button" >Annulla</button>
                                 </div>
                             </form>
                         </div>
@@ -73,8 +78,8 @@
                                 </tr>
                                 <tr>
                                     <td id="tipo-offerta"></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td id="numero-carrozza"></td>
+                                    <td id="codice-cp"></td>
                                     <td id="prezzo-biglietto"></td>
                                 </tr>
                             </table>
