@@ -1,18 +1,20 @@
 "use strict";
 
-// prendo il nome dall'input text
-let customerName = document.getElementById("validationDefault01").value;
 
-// prendo i km dall'input text
-const km = document.getElementById("validationDefault02").value;
-
-// prendo l'età dall'input text
-let customerAge = document.getElementById("age").value;
 
 //aggiungo il listener al click di "genera"
 const generatorButton = document.getElementById("genera-btn");
-generatorButton.addEventListener('click', function(){
+generatorButton.addEventListener('click', function myFunction(){
     
+    // prendo il nome dall'input text
+    let customerName = document.getElementById("validationDefault01").value;
+
+    // prendo i km dall'input text
+    const km = document.getElementById("validationDefault02").value;
+
+    // prendo l'età dall'input text
+    let customerAge = document.getElementById("age").value;
+
     // if( !isNaN(km) || km <= 0 || km > 3000) {
     //     alert("Il valore deve essere numerico, e comrpeso tra 1 e 3000!");
     //     window.location.reload();
