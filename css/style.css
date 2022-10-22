@@ -9,8 +9,9 @@ body {
     background-color: white;
     border-radius: 20px;
 }
-.ticket-generator label {
+.ticket-generator .form-label {
     color: #b91450;
+    margin: auto;
 }
 .ticket-generator .customer-name {
     text-align: center;

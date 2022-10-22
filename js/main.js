@@ -1,32 +1,54 @@
 "use strict";
 
+// prendo il nome dall'input text
+let customerName = document.getElementById("validationDefault01").value;
 
+// prendo i km dall'input text
+const km = document.getElementById("validationDefault02").value;
 
-const km = Number(prompt("Inserisci i chilometri da percorrere"));
-if( km <= 0 || km > 2000) {
-    alert("I chilometri percorsi devono essere compresi tra 1 e 2000, reinserire i dati corretti");
-    window.location.reload();
-}
-const eta = Number (prompt("Inserisci l'età del passeggero"));
-if( eta <= 0 || eta > 120) {
-    alert("L'età deve essere compresa tra 0 e 120, reinserire i dati corretti");
-    window.location.reload();
-}
-const tariffaPerKm = 0.21;
-if ( eta >= 18 && eta < 65 ) {
-   const costoBiglietto = (km * tariffaPerKm).toFixed(2);
-   document.getElementById('prezzo-biglietto').innerHTML = costoBiglietto ;
+// prendo l'età dall'input text
+let customerAge = document.getElementById("age").value;
 
-} else {
-    if (eta < 18) {
+//aggiungo il listener al click di "genera"
+const generatorButton = document.getElementById("genera-btn");
+generatorButton.addEventListener('click', function(){
+    
+    // if( !isNaN(km) || km <= 0 || km > 3000) {
+    //     alert("Il valore deve essere numerico, e comrpeso tra 1 e 3000!");
+    //     window.location.reload();
+    // }
+    // if( isNaN(customerName) ) {
+    //     alert("Il valore deve essere numerico, e comrpeso tra 1 e 3000!");
+    //     window.location.reload();
+    // }
+
+    //aggiungo il nome del passeggero
+    document.getElementById("ticket-name").innerHTML = customerName;
+
+    //calcolo il costo del biglietto 
+    const tariffaPerKm = 0.21;
+    if ( customerAge === "Maggiorenne" ) {
+    const costoBiglietto = (km * tariffaPerKm).toFixed(2);
+    let tipoOfferta = "Biglietto Standard";
+    document.getElementById("tipo-offerta").innerHTML = tipoOfferta;
+    document.getElementById("prezzo-biglietto").innerHTML = costoBiglietto;
+
+    } 
+    if ( customerAge === "Minorenne" ) {
         const costoBiglietto = ((km * tariffaPerKm) - ( (km * tariffaPerKm * 20) / 100)).toFixed(2);
-        document.getElementById('prezzo-biglietto').innerHTML = costoBiglietto;
-        document.getElementById('messaggio-sconto').innerHTML = sconto20;
+        let tipoOfferta = "Biglietto Ridotto";
+        document.getElementById("tipo-offerta").innerHTML = tipoOfferta;
+        document.getElementById("prezzo-biglietto").innerHTML = costoBiglietto;
 
     } 
-    if (eta >= 65) {
+    if ( customerAge === "Anziano" ) {
         const costoBiglietto = ((km * tariffaPerKm) - ( (km * tariffaPerKm * 40) / 100)).toFixed(2);
-        document.getElementById('prezzo-biglietto').innerHTML = costoBiglietto;
-        
-    } 
-}    
+        let tipoOfferta = "Biglietto Over 65";
+        document.getElementById("tipo-offerta").innerHTML = tipoOfferta;
+        document.getElementById("prezzo-biglietto").innerHTML = costoBiglietto;    
+    }   
+
+    //genero casualmente "codice cp" e "carrozza"
+
+});    
+//aggiungo il listener al click di "genera"
